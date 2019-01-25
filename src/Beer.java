@@ -1,29 +1,25 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Beer {
+    List<Data> data = new ArrayList();
 
-        private int id;
-        private String name;
-        private String description;
-        private int  idStyle;
-
-    HashMap<Integer, String> hashMap = new HashMap<>();
-    //ArrayList<data> arrayList = new ArrayList<>();
-
-
+    public void print() {
+        System.out.println();
+    }
 
 
     public void loadBeerStyles() {
-        for (int i = 0; i < 5; i++) {
-            hashMap.put(i, "gay"+ i);
+        HashMap<Integer, String> beerList = new HashMap<>();
+        for (int i = 0; i < data.size(); i++) {
+            beerList.put(data.get(i).getId(), data.get(i).getName());
         }
-    }
+        System.out.println(beerList);
+        }
     public void printBeerStyles() {
-        for (int i = 0; i < hashMap.size(); i++) {
-            System.out.println(i + "::" + hashMap.get(i));
+
         }
-    }
     public void printBeerStyles(String search) {
 
     }
