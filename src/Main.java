@@ -21,6 +21,7 @@ public class Main {
         reader.close();
 
         beer.loadBeerStyles();
+        beer.printBeerStyles();
 
 
     }
