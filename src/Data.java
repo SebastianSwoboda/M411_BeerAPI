@@ -1,5 +1,10 @@
 public class Data {
 
+    private int id;
+    private String name;
+    private String description;
+    private int idStyle;
+
     public int getId() {
         return id;
     }
@@ -32,8 +37,4 @@ public class Data {
         this.idStyle = idStyle;
     }
 
-    private int id;
-    private String name;
-    private String description;
-    private int  idStyle;
 }

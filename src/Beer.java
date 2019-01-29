@@ -1,35 +1,45 @@
+import com.google.gson.Gson;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Beer {
-    List<Data> data = new ArrayList();
 
-    public void print() {
-        System.out.println();
-    }
+    HashMap<Integer, String> beerList = new HashMap<>();
+    HashMap<Integer, String> beerList2 = new HashMap<>();
+    List<Data> data = new ArrayList();
 
 
     public void loadBeerStyles() {
-        HashMap<Integer, String> beerList = new HashMap<>();
 
         for (int i = 0; i < data.size(); i++) {
             beerList.put(data.get(i).getId(), data.get(i).getName());
         }
         System.out.println(beerList);
-        }
-    public void printBeerStyles()
-    {
+    }
+
+    public void printBeerStyles() {
         for (int i = 0; i < data.size(); i++) {
-            System.out.println(data.get(i).getId()  + "::" + data.get(i).getName());
+            System.out.println(data.get(i).getId() + "::" + data.get(i).getName());
         }
 
     }
 
     public void printBeerStyles(String search) {
-
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).getName().contains(search)) {
+                System.out.println(data.get(i).getId() + "::" + data.get(i).getName());
+            }
+        }
     }
+
     public void getBeerListForStyle(int idStyle) {
 
     }

@@ -13,15 +13,16 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-        String line = "";
-        String jsonString = "";
-        URL myUrl = new   URL("http://api.brewerydb.com/v2/styles/?key=1511d0db4a1d6841481c672455358cff");
-        BufferedReader reader = new BufferedReader( new InputStreamReader(myUrl.openStream()) );
+        URL myUrl = new URL("http://api.brewerydb.com/v2/styles/?key=1511d0db4a1d6841481c672455358cff");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(myUrl.openStream()));
         Beer beer = new Gson().fromJson(reader, Beer.class);
         reader.close();
 
-        beer.loadBeerStyles();
-        beer.printBeerStyles();
+
+        //beer.loadBeerStyles();
+        //beer.printBeerStyles();
+        //beer.printBeerStyles("Br");
+        //beer.getBeerListForStyle(5);
 
 
     }
