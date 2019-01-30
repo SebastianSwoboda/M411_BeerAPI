@@ -13,7 +13,6 @@ import java.util.Map;
 public class Beer {
 
     HashMap<Integer, String> beerList = new HashMap<>();
-    HashMap<Integer, String> beerList2 = new HashMap<>();
     List<Data> data = new ArrayList();
 
 
@@ -39,9 +38,20 @@ public class Beer {
             }
         }
     }
+    public void printBeerList() {
+        for (int i = 0; i < data.size(); i++) {
+            System.out.println(data.get(i).getId());
+            System.out.println(data.get(i).getName());
+        }
+    }
 
-    public void getBeerListForStyle(int idStyle) {
-
+    public void printBeer(String id) {
+        for (int i = 0; i < data.size(); i++) {
+            if (String.valueOf(data.get(i).getId()).equals(id)) {
+                System.out.println(data.get(i).getId() + "::" + data.get(i).getName());
+                System.out.println(data.get(i).getDescription());
+            }
+        }
     }
 }
 

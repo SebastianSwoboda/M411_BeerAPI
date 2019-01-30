@@ -1,4 +1,5 @@
 public class Data {
+    // for collecting the right Data from the API
 
     private int id;
     private String name;

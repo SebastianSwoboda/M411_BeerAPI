@@ -7,7 +7,8 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BeerApi {
+public class BeerAdmin {
+    // Making beer a global Beer
     Beer beer;
 
     {
@@ -19,6 +20,7 @@ public class BeerApi {
     }
 
 
+    // Simple GET Request
     public Beer apiCall() throws IOException {
 
         URL myUrl = new URL("http://api.brewerydb.com/v2/styles/?key=1511d0db4a1d6841481c672455358cff");
@@ -43,12 +45,20 @@ public class BeerApi {
 
     //WIP
     public void getBeerListForStyle(int idStyle) throws IOException {
-        URL myUrl = new URL("http://api.brewerydb.com/v2/styles/?key=1511d0db4a1d6841481c672455358cff&styleId="+idStyle);
+        URL myUrl = new URL("http://api.brewerydb.com/v2/styles/?key=1511d0db4a1d6841481c672455358cff&styleId=" + idStyle);
         BufferedReader reader = new BufferedReader(new InputStreamReader(myUrl.openStream()));
         Beer beer = new Gson().fromJson(reader, Beer.class);
         reader.close();
 
         beer.loadBeerStyles();
 
+    }
+
+    public void printBeerList() {
+        beer.printBeerList();
+    }
+
+    public void printBeer(String id) {
+        beer.printBeer(id);
     }
 }
